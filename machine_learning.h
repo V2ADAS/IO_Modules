@@ -27,61 +27,56 @@ typedef struct {
 } Slot;
 
 /**
- * @brief Abstract class representing a machine learning layer.
- */
-typedef struct {
-    /**
-     * @brief Enables lane detection with a specified interval.
-     * 
-     * @param msInterval The minimum detection interval in milliseconds.
-     */
-    void (*enableLaneDetection)(int msInterval);
+* @brief Enables lane detection with a specified interval.
+* 
+* @param msInterval The minimum detection interval in milliseconds.
+*/
+void ML_EnableLaneDetection(int msInterval);
 
-    /**
-     * @brief Disables lane detection.
-     */
-    void (*disableLaneDetection)();
+/**
+* @brief Disables lane detection.
+*/
+void ML_DisableLaneDetection();
 
-    /**
-     * @brief Handles the current lane position.
-     * 
-     * @param currentLanePosition The current lane position data.
-     */
-    void (*handleLanePosition)(LanePosition currentLanePosition);
+/**
+* @brief Handles the current lane position.
+* 
+* @param currentLanePosition The current lane position data.
+*/
+void ML_HandleLanePosition(LanePosition currentLanePosition);
 
-    /**
-     * @brief Enables slot search mode.
-     */
-    void (*enableSlotSearchMode)();
+/**
+* @brief Enables slot search mode.
+*/
+void ML_EnableSlotSearchMode();
 
-    /**
-     * @brief Disables slot search mode.
-     */
-    void (*disableSlotSearchMode)();
+/**
+* @brief Disables slot search mode.
+*/
+void ML_DisableSlotSearchMode();
 
-    /**
-     * @brief Handles the found slot.
-     * 
-     * @param foundSlot The found slot data.
-     */
-    void (*onSlotFound)(Slot foundSlot);
+/**
+* @brief Handles the found slot.
+* 
+* @param foundSlot The found slot data.
+*/
+void ML_OnSlotFound(Slot foundSlot);
 
-    /**
-     * @brief Enables collision threat detection.
-     */
-    void (*enableCollisionThreat)();
+/**
+* @brief Enables collision threat detection.
+*/
+void ML_EnableCollisionThreat();
 
-    /**
-     * @brief Disables collision threat detection.
-     */
-    void (*disableCollisionThreat)();
+/**
+* @brief Disables collision threat detection.
+*/
+void ML_DisableCollisionThreat();
 
-    /**
-     * @brief Handles the current collision threat.
-     * 
-     * @param currentCollisionThreat The current collision threat level.
-     */
-    void (*handleCollisionThreat)(CollisionThreat currentCollisionThreat);
-} MLLayer;
+/**
+* @brief Handles the current collision threat.
+* 
+* @param currentCollisionThreat The current collision threat level.
+*/
+void ML_HandleCollisionThreat(CollisionThreat currentCollisionThreat);
 
 #endif /* ML_LAYER_H */

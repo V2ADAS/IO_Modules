@@ -10,27 +10,17 @@ typedef struct {
 } FilteredReading;
 
 /**
- * @brief Function pointer signature for filtering ultrasonic sensor readings.
+ * @brief The function used for filtering ultrasonic sensor readings.
+ *
+ * The function takes an array of readings and the number of readings as input and
+ * returns a FilteredReading structure containing the filtered reading and confidence.
  *
  * @param readings An array of ultrasonic sensor readings.
  * @param numReadings The number of readings in the array.
  * @return A FilteredReading structure containing the filtered reading and confidence.
  */
-typedef FilteredReading (*FilterReadingFunction)(double* readings, int numReadings);
+FilteredReading FILTER_FilterReadings(double* readings, int numReadings);
 
-/**
- * @brief Structure representing an ultrasonic filter.
- */
-typedef struct {
-    /**
-     * @brief Function pointer to the method used for filtering ultrasonic sensor readings.
-     *
-     * The function takes an array of readings and the number of readings as input and
-     * returns a FilteredReading structure containing the filtered reading and confidence.
-     */
-    FilterReadingFunction filterReading;
-
-    // TODO: Add fields for actual filters
-} UltrasonicFilter;
+// TODO: Add fields for actual filters
 
 #endif // ULTRASONIC_FILTER_H

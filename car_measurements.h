@@ -30,47 +30,43 @@ typedef struct {
 } IMUReading;
 
 
+
 /**
- * @brief Abstract class representing car measurements.
- */
-typedef struct {
-    /**
-     * @brief Enables car measurements.
-     */
-    void (*enableMeasurements)();
+* @brief Enables car measurements.
+*/
+void MSRMNTS_EnableMeasurements();
 
-    /**
-     * @brief Disables car measurements.
-     */
-    void (*disableMeasurements)();
+/**
+* @brief Disables car measurements.
+*/
+void MSRMNTS_DisableMeasurements();
 
-    /**
-     * @brief Handles wheel rotation readings.
-     *
-     * @param wheelRotation A structure containing the wheel rotation reading data.
-     */
-    void (*handleWheelRotation)(WheelRotationReading wheelRotation);
+/**
+* @brief Handles wheel rotation readings.
+*
+* @param wheelRotation A structure containing the wheel rotation reading data.
+*/
+void MSRMNTS_HandleWheelRotation(WheelRotationReading wheelRotation);
 
-    /**
-     * @brief Handles accelerometer readings.
-     *
-     * @param accelerometerReading A structure containing the accelerometer reading data.
-     */
-    void (*handleAccelerometerReading)(AccelerometerReading accelerometerReading);
+/**
+* @brief Handles accelerometer readings.
+*
+* @param accelerometerReading A structure containing the accelerometer reading data.
+*/
+void MSRMNTS_HandleAccelerometerReading(AccelerometerReading accelerometerReading);
 
-    /**
-     * @brief Handles compass readings.
-     *
-     * @param compassReading A structure containing the compass reading data.
-     */
-    void (*handleCompassReading)(CompassReading compassReading);
+/**
+* @brief Handles compass readings.
+*
+* @param compassReading A structure containing the compass reading data.
+*/
+void MSRMNTS_HandleCompassReading(CompassReading compassReading);
 
-    /**
-     * @brief Handles IMU readings.
-     *
-     * @param imuReading A structure containing the IMU reading data.
-     */
-    void (*handleImuReading)(IMUReading imuReading);
-} CarMeasurements;
+/**
+* @brief Handles IMU readings.
+*
+* @param imuReading A structure containing the IMU reading data.
+*/
+void MSRMNTS_HandleImuReading(IMUReading imuReading);
 
 #endif // CAR_MEASUREMENTS_H

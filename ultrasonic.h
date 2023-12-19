@@ -11,36 +11,32 @@ typedef struct {
     int isOn; /**< Flag indicating whether the sensor is on or off (0 for off, 1 for on). */
 } Sensor;
 
+
 /**
- * @brief Structure representing an ultrasonic sensor.
- */
-typedef struct {
-    /**
-     * @brief Turns on the ultrasonic sensor.
-     *
-     * @param selectedSensors Optional list indicating which sensors to turn on.
-     *                        If NULL, all sensors are turned on.
-     * @param length The length of the selectedSensors array.
-     */
-    void (*turnOn)(const int* selectedSensors, int length);
+* @brief Turns on the ultrasonic sensor.
+*
+* @param selectedSensors Optional list indicating which sensors to turn on.
+*                        If NULL, all sensors are turned on.
+* @param length The length of the selectedSensors array.
+*/
+void ULTRASONIC_TurnOn(const int* selectedSensors, int length);
 
-    /**
-     * @brief Turns off the ultrasonic sensor.
-     *
-     * @param selectedSensors Optional list indicating which sensors to turn off.
-     *                        If NULL, all sensors are turned off.
-     * @param length The length of the selectedSensors array.
-     */
-    void (*turnOff)(const int* selectedSensors, int length);
+/**
+* @brief Turns off the ultrasonic sensor.
+*
+* @param selectedSensors Optional list indicating which sensors to turn off.
+*                        If NULL, all sensors are turned off.
+* @param length The length of the selectedSensors array.
+*/
+void ULTRASONIC_TurnOff(const int* selectedSensors, int length);
 
-    /**
-     * @brief Updates the readings of the ultrasonic sensor.
-     *
-     * @param destination An array to store the updated sensor readings.
-     * @param length The length of the destination array.
-     */
-    void (*updateReadings)(double* destination, int length);
-} Ultrasonic;
+/**
+* @brief Updates the readings of the ultrasonic sensor.
+*
+* @param destination An array to store the updated sensor readings.
+* @param length The length of the destination array.
+*/
+void ULTRASONIC_UpdateReadings(double* destination, int length);
 
 /**
  * @brief Constant representing the number of sensors.
