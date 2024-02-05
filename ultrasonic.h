@@ -38,8 +38,17 @@ typedef struct {
      *
      * @param destination An array to store the updated sensor readings.
      * @param length The length of the destination array.
+     * @param carSpeed The current speed of the car.
+     * @param encoderValue The current encoder value of the DC motor.
      */
-    void (*updateReadings)(double* destination, int length);
+    void (*updateReadings)(double* destination, int length, double carSpeed, int encoderValue);
+
+    /**
+     * @brief Updates the speed of the car.
+     *
+     * @param speed The new speed of the car.
+     */
+    void (*updateCarSpeed)(double speed);
 } Ultrasonic;
 
 /**
